@@ -11,46 +11,41 @@ const Books = () => {
       id: data.length,
       title,
       author,
-    }
+    };
     setData(
       [
         ...data,
         newBook,
-      ]
+      ],
     );
-    console.log(data);
   };
 
   const removeBook = (id) => {
     setData(
-      data.filter((book) => book.id !== id)
+      data.filter((book) => book.id !== id),
     );
   };
 
   useEffect(() => {
     setData(
-      data.map((book, id) => {
-        return ({
-          ...book,
-          id,
-        });
-      })
+      data.map((book, id) => ({
+        ...book,
+        id,
+      })),
     );
-  }, [data, setData])
+  }, [data, setData]);
 
   return (
     <div id="books-ctr">
       <div id="booklist">
         {
-          data.map((book) => {
-            return (
-              <div class="book-item" id={("book" + book.id)}>
-                <h3>{book.title}</h3>
-                <h3>{book.author}</h3>
-                <button type='button' onClick={() => removeBook(book.id)}>Delete</button>
-              </div>
-            );
-          })
+          data.map((book) => (
+            <div className="book-item" key={book.id} id={(`book${book.id}`)}>
+              <h3>{book.title}</h3>
+              <h3>{book.author}</h3>
+              <button type="button" onClick={() => removeBook(book.id)}>Delete</button>
+            </div>
+          ))
         }
       </div>
       <form>

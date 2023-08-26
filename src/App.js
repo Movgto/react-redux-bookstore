@@ -10,9 +10,9 @@ function App() {
       <HashRouter>
         <Header />
         <Routes>
-          <Route path='/'>
+          <Route path="/">
             <Route index element={<Books />} />
-            <Route path='/categories' element={<Categories />} />
+            <Route path="/categories" element={<Categories />} />
           </Route>
         </Routes>
       </HashRouter>
