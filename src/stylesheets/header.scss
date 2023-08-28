@@ -1,0 +1,17 @@
+header {
+  display: flex;
+  border: solid black;
+  justify-content: center;
+
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+    }
+  }
+}

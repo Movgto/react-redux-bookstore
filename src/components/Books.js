@@ -1,45 +1,32 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import '../stylesheets/books.scss';
+import { useSelector, useDispatch } from 'react-redux';
+import { add, remove } from '../features/books/bookSlice';
 
 const Books = () => {
-  const [data, setData] = useState([]);
+  const books = useSelector((state) => state.books.data);
+  const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
   const addBook = (title, author) => {
     const newBook = {
-      id: data.length,
+      id: books.length,
       title,
       author,
     };
-    setData(
-      [
-        ...data,
-        newBook,
-      ],
-    );
+    dispatch(add(newBook));
   };
 
   const removeBook = (id) => {
-    setData(
-      data.filter((book) => book.id !== id),
-    );
+    dispatch(remove(id));
   };
-
-  useEffect(() => {
-    setData(
-      data.map((book, id) => ({
-        ...book,
-        id,
-      })),
-    );
-  }, [data, setData]);
 
   return (
     <div id="books-ctr">
       <div id="booklist">
         {
-          data.map((book) => (
+          books.map((book) => (
             <div className="book-item" key={book.id} id={(`book${book.id}`)}>
               <h3>{book.title}</h3>
               <h3>{book.author}</h3>
