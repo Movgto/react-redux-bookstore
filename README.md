@@ -6,7 +6,6 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
 - [👥 Authors](#authors)
@@ -41,12 +40,6 @@ Building a Bookstore Application with React-Redux framework.
 
 - Single page application using React components.
 - Using `react-router-dom` library to simulate a router that allows users to navigate through different sections of the website, but without user having to wait to request a new page to the server, since all the content is already accesible from a single page from start.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-Live demo coming soon.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
