@@ -14,6 +14,7 @@ const BookItem = ({ book }) => {
     <div className="book-item" key={book.id} id={(`book${book.id}`)}>
       <h3>{book.title}</h3>
       <h3>{book.author}</h3>
+      <h3>{book.category}</h3>
       <button type="button" onClick={() => removeBook(book.id)}>Delete</button>
     </div>
   );

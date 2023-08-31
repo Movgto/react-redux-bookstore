@@ -35,7 +35,6 @@ const Form = () => {
         <option value="romance">Romance</option>
         <option value="classic">Classic</option>
       </select>
-      <p>{category}</p>
       <button type="button" onClick={() => addBook(title, author, category)}>Add Book</button>
     </form>
   );
