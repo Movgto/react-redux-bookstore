@@ -1,10 +1,17 @@
+import { useEffect } from 'react';
 import '../stylesheets/books.scss';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchBooks } from '../features/books/bookSlice';
 import BookItem from './BookItem';
 import Form from './Form';
 
 const Books = () => {
   const books = useSelector((state) => state.books.data);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchBooks());
+  }, [dispatch]);
 
   return (
     <div id="books-ctr">

@@ -1,23 +1,25 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { add } from '../features/books/bookSlice';
+import { useDispatch } from 'react-redux';
+import { addBook as add, fetchBooks } from '../features/books/bookSlice';
 
 const Form = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('');
-  const books = useSelector((state) => state.books.data);
   const dispatch = useDispatch();
 
-  const addBook = (title, author) => {
-    const newBook = {
-      id: books.length,
-      title,
-      author,
-    };
-    dispatch(add(newBook));
-    setTitle('');
-    setAuthor('');
+  const addBook = (title, author, category) => {
+    if (title && author && category) {
+      const bookObj = {
+        title,
+        author,
+        category,
+      };
+      dispatch(add(bookObj))
+        .then(() => dispatch(fetchBooks()));
+      setAuthor('');
+      setTitle('');
+    }
   };
 
   return (
