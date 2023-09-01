@@ -19,7 +19,6 @@ const Form = () => {
         .then(() => dispatch(fetchBooks()));
       setAuthor('');
       setTitle('');
-    }
   };
 
   return (
