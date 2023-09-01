@@ -11,11 +11,13 @@ const BookItem = ({ book }) => {
   };
 
   return (
-    <div className="book-item" key={book.id} id={(`book${book.id}`)}>
-      <h3>{book.title}</h3>
-      <h3>{book.author}</h3>
-      <h3>{book.category}</h3>
-      <button type="button" onClick={() => removeBook(book.id)}>Delete</button>
+    <div className="Lesson-Panel" key={book.id} id={(`book${book.id}`)}>
+      <div className="book-info">
+        <h3 className="School-of">{book.category}</h3>
+        <h3 className="Title Text-Style-5">{book.title}</h3>
+        <h3 className="Suzanne-Collins Text-Style-8">{book.author}</h3>
+        <button type="button" onClick={() => removeBook(book.id)}>Delete</button>
+      </div>
     </div>
   );
 };

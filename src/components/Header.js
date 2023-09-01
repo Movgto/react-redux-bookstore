@@ -1,15 +1,18 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import '../stylesheets/header.scss';
 
 const Header = () => (
   <header>
-    <h1>Bookstore CMS</h1>
+    <h1 className="Bookstore-CMS">Bookstore CMS</h1>
     <nav>
       <ul>
-        <li><Link to="/">Books</Link></li>
-        <li><Link to="/categories">Categories</Link></li>
+        <li><NavLink className="BOOKS" to="/">Books</NavLink></li>
+        <li><NavLink className="CATEGORIES" to="/categories">Categories</NavLink></li>
       </ul>
     </nav>
+    <div className="Oval">
+      <div className="Mask" />
+    </div>
   </header>
 );
 

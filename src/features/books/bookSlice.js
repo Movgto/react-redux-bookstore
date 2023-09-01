@@ -67,11 +67,13 @@ const bookSlice = createSlice({
         state.status = 'succeeded';
         const bookArray = [];
         Object.keys(action.payload).forEach((prop) => {
+          let { category } = action.payload[prop][0];
+          category = category.split('')[0].toUpperCase() + category.split('').slice(1).join('');
           const book = {
             id: prop,
             title: action.payload[prop][0].title,
             author: action.payload[prop][0].author,
-            category: action.payload[prop][0].category,
+            category,
           };
 
           bookArray.push(book);
