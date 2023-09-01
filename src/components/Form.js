@@ -23,20 +23,23 @@ const Form = () => {
   };
 
   return (
-    <form>
-      <input type="text" placeholder="title" value={title} onChange={(e) => setTitle(e.target.value)} />
-      <input type="text" placeholder="author" value={author} onChange={(e) => setAuthor(e.target.value)} />
-      <select onChange={(e) => setCategory(e.target.value)}>
-        <option value="" selected disabled hidden>-- Category --</option>
-        <option value="horror">Horror</option>
-        <option value="fantasy">Fantasy</option>
-        <option value="sci-fi">Science Fiction</option>
-        <option value="mystery">Mystery</option>
-        <option value="romance">Romance</option>
-        <option value="classic">Classic</option>
-      </select>
-      <button type="button" onClick={() => addBook(title, author, category)}>Add Book</button>
-    </form>
+    <div id="form-ctr">
+      <h2>ADD NEW BOOK</h2>
+      <form>
+        <input id="title" type="text" placeholder="Book title" value={title} onChange={(e) => setTitle(e.target.value)} />
+        <input id="author" type="text" placeholder="Author" value={author} onChange={(e) => setAuthor(e.target.value)} />
+        <select id="category" onChange={(e) => setCategory(e.target.value)}>
+          <option value="" selected disabled hidden>Category</option>
+          <option value="horror">Horror</option>
+          <option value="fantasy">Fantasy</option>
+          <option value="sci-fi">Science Fiction</option>
+          <option value="mystery">Mystery</option>
+          <option value="romance">Romance</option>
+          <option value="classic">Classic</option>
+        </select>
+        <button type="button" onClick={() => addBook(title, author, category)}>ADD BOOK</button>
+      </form>
+    </div>
   );
 };
 
