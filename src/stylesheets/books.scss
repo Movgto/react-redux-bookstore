@@ -12,6 +12,15 @@ $black-two: #121212;
 $azure: #0290ff;
 $white-three: #e8e8e8;
 
+@mixin inputs() {
+  padding: 1rem;
+  border-radius: 4px;
+  border: solid 1px $white-three;
+  background-color: $white-two;
+  font-size: 1rem;
+  letter-spacing: -0.15px;
+}
+
 #books-ctr {
   display: flex;
   flex-direction: column;
@@ -42,14 +51,10 @@ $white-three: #e8e8e8;
       margin-bottom: 4rem;
 
       #title {
-        padding: 1rem;
-        border-radius: 4px;
-        border: solid 1px $white-three;
-        background-color: $white-two;
-        color: $very-light-pink;
-        font-size: 1rem;
-        letter-spacing: -0.15px;
+        @include inputs();
+
         flex: 3;
+        color: $very-light-pink;
 
         &::placeholder {
           color: $very-light-pink;
@@ -57,12 +62,8 @@ $white-three: #e8e8e8;
       }
 
       #author {
-        padding: 1rem;
-        border-radius: 4px;
-        border: solid 1px $white-three;
-        background-color: $white-two;
-        font-size: 1rem;
-        letter-spacing: -0.15px;
+        @include inputs();
+
         flex: 1;
 
         &::placeholder {
@@ -71,13 +72,9 @@ $white-three: #e8e8e8;
       }
 
       select {
-        padding: 1rem;
-        border-radius: 4px;
-        border: solid 1px $white-three;
-        background-color: $white-two;
+        @include inputs();
+
         color: $very-light-pink;
-        font-size: 1rem;
-        letter-spacing: -0.15px;
         flex: 1;
       }
 
@@ -125,10 +122,6 @@ $white-three: #e8e8e8;
           opacity: 0.5;
           font-size: 0.875rem;
           font-weight: bold;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: normal;
-          letter-spacing: normal;
           color: $black-two;
           font-family: "Montserrat", sans-serif;
         }
@@ -136,9 +129,6 @@ $white-three: #e8e8e8;
         .Title {
           font-size: 1.375rem;
           font-weight: bold;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: normal;
           letter-spacing: -0.2px;
           color: $black-two;
           font-family: "Roboto Slab", sans-serif;
@@ -147,10 +137,6 @@ $white-three: #e8e8e8;
         .Author {
           font-size: 0.875rem;
           font-weight: 300;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: normal;
-          letter-spacing: normal;
           color: #4386bf;
           font-family: "Roboto Slab", sans-serif;
         }
@@ -165,10 +151,6 @@ $white-three: #e8e8e8;
             font-family: "Roboto Slab", sans-serif;
             font-size: 1rem;
             font-weight: 300;
-            font-stretch: normal;
-            font-style: normal;
-            line-height: normal;
-            letter-spacing: normal;
             color: #4386bf;
           }
 
@@ -182,10 +164,6 @@ $white-three: #e8e8e8;
             font-family: "Roboto Slab", sans-serif;
             font-size: 1rem;
             font-weight: 300;
-            font-stretch: normal;
-            font-style: normal;
-            line-height: normal;
-            letter-spacing: normal;
             color: #4386bf;
             background-color: transparent;
             border: transparent;
@@ -227,11 +205,6 @@ $white-three: #e8e8e8;
             .percentage {
               font-family: "Montserrat", sans-serif;
               font-size: 2rem;
-              font-weight: normal;
-              font-stretch: normal;
-              font-style: normal;
-              line-height: normal;
-              letter-spacing: normal;
               color: $black-two;
             }
 
@@ -239,11 +212,6 @@ $white-three: #e8e8e8;
               opacity: 0.5;
               font-family: "Montserrat", sans-serif;
               font-size: 0.875rem;
-              font-weight: normal;
-              font-stretch: normal;
-              font-style: normal;
-              line-height: normal;
-              letter-spacing: normal;
               color: $black-two;
             }
           }

@@ -10,6 +10,18 @@ $black-two: #121212;
 $azure: #0290ff;
 $white-three: #e8e8e8;
 
+@mixin navlinks() {
+  font-family: Montserrat, sans-serif;
+  font-size: 0.6rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  color: $black-two;
+  text-decoration: none;
+  letter-spacing: 1.9px;
+}
+
 header {
   display: flex;
   justify-content: center;
@@ -47,30 +59,13 @@ header {
         gap: 1rem;
 
         .BOOKS {
-          height: 1rem;
-          font-family: Montserrat, sans-serif;
-          font-size: 0.6rem;
-          font-weight: normal;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: normal;
-          color: $black-two;
-          text-decoration: none;
-          letter-spacing: 1.9px;
+          @include navlinks();
         }
 
         .CATEGORIES {
-          height: 1rem;
           opacity: 0.5;
-          font-size: 0.6rem;
-          font-weight: normal;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: normal;
-          color: $black-two;
-          text-decoration: none;
-          letter-spacing: 1.9px;
-          font-family: Montserrat, sans-serif;
+
+          @include navlinks();
         }
       }
     }
